@@ -28,7 +28,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: null
   labels:
     app: frontend
   name: frontend-service
@@ -37,7 +36,8 @@ spec:
   - name: frontend
     port: 5000
     protocol: TCP
-    targetPort: 30080
+    targetPort: 5000
+    nodePort: 30080
   selector:
     app: frontend
   type: NodePort
